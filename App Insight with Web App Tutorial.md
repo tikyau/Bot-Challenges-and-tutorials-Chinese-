@@ -117,7 +117,7 @@ Application Insights 可以从任何连接 Internet
 
 >   若要启用“页面视图加载时间”图表以填充“客户端遥测”数据，请将此脚本添加到要跟踪的每一页：
 
->   HTML复制
+```html
 
 >   \<!--
 
@@ -154,6 +154,8 @@ Application Insights 可以从任何连接 Internet
 >   appInsights.trackPageView();
 
 >   \</script\>
+
+```
 
 1.  从“调查”标题下单击“浏览器”。 在此处可找到与应用页性能相关的指标。 可以单击“添加新图表”创建其他自定义视图，或者选择“编辑”修改现有的图表类型、高度、调色板、分组和指标。
 
