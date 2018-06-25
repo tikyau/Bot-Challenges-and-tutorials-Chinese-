@@ -232,7 +232,7 @@ NPM 包**app.js**文件。然后,
 1.  使用应用程序服务编辑器打开一个新的浏览器选项卡。在顶部栏中选择应用程序名称,
     然后选择**打开羚控制台**.
 
-![](media/e17fba907239b8082ee07249a322667e.png)
+![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/kudu-console.png)
 
 >   搜索应用程序洞察力
 
@@ -242,7 +242,7 @@ NPM 包**app.js**文件。然后,
 
 >   cd 站点 \\wwwroot&&Npm安装applicationinsights&&Npm安装下划线
 
-![](media/96fc3a0e07c38c51a65a84f07d098bde.png)
+![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/npm-install.png)
 
 >   搜索应用程序洞察力
 
@@ -414,7 +414,7 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 1.  在门户中, 选择**所有资源**然后按 web app bot 名称进行筛选。Application
     Insight的图标是一个灯泡。
 
-![](media/8792ca19482d865fb12ff316ea288c45.png)
+![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/search-for-app-insights.png)
 
 >   搜索应用程序洞察力
 
@@ -423,14 +423,14 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
     面板可能需要第二次显示。搜索LUIS结果然后点击键盘上的 enter
     键。该列表被缩小到仅在本教程中添加的LUIS查询结果。
 
-![](media/f49c4f795b825d266019bef8bedf3bba.png)
+![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/app-insights-filter.png)
 
 >   筛选到依赖项
 
 1.  选择顶部条目。新窗口将显示更详细的数据,
     包括极右查询的自定义数据。数据包括最高的意图, 和它的分数。
 
-![](media/0fdf8f986effd3fd091c1af94309ad10.png)
+![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/app-insights-detail.png)
 
 >   相关性详细信息
 
@@ -448,7 +448,7 @@ Insight为您提供了查询数据的能力。[Kusto](https://docs.microsoft.com
 
 1.  点击**分析**在依赖项列表的顶部, 在筛选器框的上方。
 
-![](media/92dd65babc93f4b5987f93419af102c2.png)
+![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/analytics-button.png)
 
 >   分析按钮
 
@@ -456,7 +456,7 @@ Insight为您提供了查询数据的能力。[Kusto](https://docs.microsoft.com
     下面是一个数据表窗口。如果以前使用过数据库,
     这种安排是很熟悉的。查询包括从最近24小时开始的所有项目的名称LUIS-Results.的**CustomDimensions**列将LUIS查询结果用作名称/值对。
 
-![](media/9f0ddabef1a6d62c83584aa5cbd0c106.png)
+![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/analytics-query-window.png)
 
 >   分析查询窗口
 
@@ -477,6 +477,6 @@ Insight为您提供了查询数据的能力。[Kusto](https://docs.microsoft.com
 1.  运行查询。滚动到数据表中的最右边。的新列topIntent, 得分和话语都有。单击
     "topIntent要排序的列。
 
-![](media/3868f5b77090a7b1576bf20cd93cc35e.png)
+![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/app-insights-top-intent.png)
 
 >   分析顶部意图
