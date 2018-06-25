@@ -225,7 +225,7 @@ NPM 包**app.js**文件。然后,
 
 1.  在 Azure 门户中, 在 web app bot 服务中, 选择**建立**下的**Bot 管理**部分。
 
-![](media/https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/build.png)
+![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/build.png)
 
 >   搜索应用程序洞察力
 
