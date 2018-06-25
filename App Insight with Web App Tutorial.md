@@ -1,115 +1,123 @@
-開始監視 Node.js Web 應用程式
-=============================
+开始监视 Node.js Web 应用程序
 
-Azure Application Insights 可讓您輕鬆監視 Web
-應用程式的可用性、效能和使用情形。 還可讓您快速識別並診斷應用程式的錯誤，不必等使用者回報。 從
-0.20 版 SDK 開始，您可以監視常見的第三方套件，包括 MongoDB、MySQL 和 Redis。
+使用 Azure Application Insights，可轻松监视 Web
+应用程序的可用性、性能和使用情况。 还可以快速确定并诊断应用程序中的错误，而无需等待用户报告这些错误。 使用
+0.20 版 SDK 发行版及更高版本，可以监视常见的第三方包，包括 MongoDB、MySQL 和
+Redis。
 
-本快速入門引導您將 0.22 版 Application Insights SDK for Node.js 新增至現有的
-Node.js Web 應用程式。
+本快速入门介绍如何将用于 Node.js 的 0.22 版 Application Insights SDK 添加到现有
+Node.js Web 应用程序。
 
-先決條件
---------
+先决条件
 
-若要完成本快速入門：
+完成本快速入门教程：
 
--   您需要 Azure 訂用帳戶和現有的 Node.js Web 應用程式。
+-   需要 Azure 订阅和现有 Node.js Web 应用程序。
 
-如果您沒有 Node.js Web 應用程式，請依照[建立 Node.js Web
-應用程式快速入門](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)來建立。
+如果没有 Node.js Web 应用程序，则可以按照[创建 Node.js Web
+应用快速入门](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)创建一个。
 
-如果您沒有 Azure
-訂用帳戶，請在開始前建立[免費帳戶](https://azure.microsoft.com/free/) 。
+如果你还没有 Azure
+订阅，可以在开始前创建一个[免费](https://azure.microsoft.com/free/)帐户。
 
-登入 Azure 入口網站
--------------------
+登录到 Azure 门户
 
-登入 [Azure 入口網站](https://portal.azure.com/)。
+登录到 [Azure 门户](https://portal.azure.com/)。
 
-![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/001-u.png)
+启用 Application Insights
 
-啟用 Application Insights
--------------------------
+Application Insights 可以从任何连接 Internet
+的应用程序收集遥测数据，而不考虑它是在本地运行还是在云中运行。 按照以下步骤开始查看此数据。
 
-Application Insights
-可以從任何連上網際網路的應用程式收集遙測資料，而不論應用程式在內部部署或雲端中執行。 請使用下列步驟來開始檢視此資料。
+1.  选择“创建资源” \> “监视 + 管理” \> “Application Insights”。
 
-1.  選取 [建立資源] \> **[監視 + 管理]** \> **[Application Insights]**。
+![](media/82e6e5709f9993a5749423f6aa357740.png)
 
->   設定方塊隨即出現，請使用下表來填寫輸入欄位。
+>   添加 Application Insights 资源
 
-| **設定**         | **值**           | **說明**                                     |
-|------------------|------------------|----------------------------------------------|
-| **名稱**         | 通用唯一值       | 此名稱可識別您要監視的應用程式               |
-| **應用程式類型** | Node.js 應用程式 | 您要監視的應用程式類型                       |
-| **資源群組**     | myResourceGroup  | 用於裝載 App Insights 資料之新資源群組的名稱 |
-| **位置**         | 美國東部         | 選擇您附近或接近應用程式裝載位置的地點       |
+>   此时会显示配置对话框，请使用下表填写输入字段。
 
-1.  按一下頁面底部的 [新增] 。
+| **设置**         | **值**           | **说明**                                   |
+|------------------|------------------|--------------------------------------------|
+| **Name**         | 全局唯一值       | 标识所监视的应用的名称                     |
+| **应用程序类型** | Node.js 应用程序 | 所监视的应用的类型                         |
+| **资源组**       | myResourceGroup  | 用于托管 App Insights 数据的新资源组的名称 |
+| **位置**         | 美国东部         | 选择离你近的位置或离托管应用的位置近的位置 |
 
-設定 App Insights SDK
----------------------
+1.  单击“创建”。
 
-1.  選取 [概觀] \> **[程式集]** \> 複製應用程式的 [檢測金鑰]。
+配置 App Insights SDK
 
-![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/003-black.png)
+1.  选择“概述” \> “概要”\> 复制应用程序的**检测密钥**。
 
-2.  將 Application Insights SDK for Node.js
-    新增至您的應用程式。 從應用程式的根資料夾執行：
+![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/001-u.png)
 
->   bash複製
+>   “新建 App Insights 资源”窗体
+
+1.  将用于 Node.js 的 Application Insights SDK
+    添加到应用程序。 从应用的根文件夹运行：
+
+>   bash复制
 
 >   npm install applicationinsights --save
 
-1.  編輯應用程式的第一個 .js
-    檔案，將下列兩行新增至指令碼的最頂端部分。 如果您使用 [Node.js
-    快速入門應用程式](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)，請修改
-    index.js 檔案。 將 \<instrumentation_key\> 取代為您應用程式的檢測金鑰。
+1.  编辑应用的第一个 .js
+    文件并将以下两行添加到脚本的最顶部部分。 如果使用的是 [Node.js
+    快速入门应用](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)，则将修改
+    index.js 文件。 将 \<instrumentation_key\> 替换为应用程序的检测密钥。
 
->   JavaScript複製
+>   JavaScript复制
 
 >   const appInsights = require('applicationinsights');
 
 >   appInsights.setup('\<instrumentation_key\>').start();
 
-1.  重新啟動您的應用程式。
+1.  重启应用。
 
-**注意**
+**备注**
 
-經過 3-5
-分鐘，資料就會開始出現在入口網站。 如果此應用程式是低流量測試應用程式，請記住，只有在使用中的要求或作業發生時，才會擷取大部分的計量。
+这需要 3-5
+分钟，然后数据才开始显示在门户中。 如果此应用是一个低流量测试应用，请记住，仅当存在活动请求或正在执行的操作时，才会捕获大多数指标。
 
-在 Azure 入口網站中開始監視
----------------------------
+开始在 Azure 门户中监视
 
-1.  現在，您可以在 Azure 入口網站中重新開啟 Application Insights [概觀] 頁面
-    (您先前在此擷取檢測金鑰)，以檢視目前執行中應用程式的詳細資料。
+1.  现在可以在 Azure 门户中重新打开 Application
+    Insights“概述”页（已在其中检索到检测密钥），查看有关当前正在运行的应用程序的详细信息。
 
-![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/004-black.png)
+![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/003-black.png)
 
-2.  按一下
-    [應用程式對應]，以顯示應用程式元件之間相依性關聯性的視覺化配置。 每個元件會顯示負載、效能、失敗和警示等
+>   Application Insights 概述菜单
 
-![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/005-black.png)
-    KPI。
+1.  单击“应用映射”以获取应用程序组件之间依赖关系的可视布局。 每个组件均显示
+    KPI，如负载、性能、失败和警报。
 
-3.  按一下 [應用程式分析] 圖示 。 這樣會開啟 **Application Insights
-    Analytics**，它提供一種豐富查詢語言，可用於分析 Application Insights
-    收集的所有資料。 此案例中會為您產生查詢，可將要求計數以圖表呈現。 您可以撰寫自己的查詢來分析其他資料。
+![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/004-black.png)
 
-![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/007-black.png)
+>   应用程序地图
 
-4.  返回 [概觀] 頁面，檢查
-    [健康情況概觀時間軸]。 此儀表板會提供應用程式健康情況的統計資料，包括連入要求數量、這些要求的持續時間，以及任何發生的失敗。
+1.  单击“应用分析”图标 
 
-![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/008-black.png)
+    ![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/005-black.png)
 
->   若要在 [網頁檢視載入時間]
->   圖表中填入**用戶端遙測**資料，請將此指令碼新增至您要追蹤的每個頁面：
+    >   “应用程序映射”图标
 
-```javascript
+    >   。 这将打开“Application Insights
+    >   Analytics”，该软件提供丰富的查询语言，可用于分析 Application Insights
+    >   收集的所有数据。 在本示例中，将生成以图表形式呈现请求计数的查询。 可以编写自己的查询来分析其他数据。
 
->   HTML複製
+![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/007-black.png)
+
+>   一段时间内用户请求的分析图
+
+1.  返回到“概述”页，并检查“运行状况概述时间线”。 此仪表板提供有关应用程序运行状况的统计信息，包括传入请求数、这些请求的持续时间，以及发生的任何故障。
+
+![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/008-black.png)
+
+>   “运行状况概述时间线”图
+
+>   若要启用“页面视图加载时间”图表以填充“客户端遥测”数据，请将此脚本添加到要跟踪的每一页：
+
+>   HTML复制
 
 >   \<!--
 
@@ -147,11 +155,8 @@ Application Insights
 
 >   \</script\>
 
-```
+1.  从“调查”标题下单击“浏览器”。 在此处可找到与应用页性能相关的指标。 可以单击“添加新图表”创建其他自定义视图，或者选择“编辑”修改现有的图表类型、高度、调色板、分组和指标。
 
-5.  按一下 [調查] 標題下的
-    [瀏覽器]。 您在這裡可以找到應用程式頁面效能的相關計量。 您可以按一下
-    [新增新的圖表] 來建立額外的自訂檢視，或選取 [編輯]
-    來修改現有圖表的類型、高度、調色盤、群組和計量。
-    
-![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/009-black.png)
+![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/009-black.png)
+
+>   “服务器指标”图
