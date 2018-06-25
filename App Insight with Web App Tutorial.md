@@ -26,6 +26,8 @@ Node.js Web 應用程式。
 
 登入 [Azure 入口網站](https://portal.azure.com/)。
 
+![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/001-u.png)
+
 啟用 Application Insights
 -------------------------
 
@@ -49,6 +51,8 @@ Application Insights
 ---------------------
 
 1.  選取 [概觀] \> **[程式集]** \> 複製應用程式的 [檢測金鑰]。
+
+![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/003-black.png)
 
 2.  將 Application Insights SDK for Node.js
     新增至您的應用程式。 從應用程式的根資料夾執行：
@@ -81,19 +85,29 @@ Application Insights
 1.  現在，您可以在 Azure 入口網站中重新開啟 Application Insights [概觀] 頁面
     (您先前在此擷取檢測金鑰)，以檢視目前執行中應用程式的詳細資料。
 
+![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/004-black.png)
+
 2.  按一下
     [應用程式對應]，以顯示應用程式元件之間相依性關聯性的視覺化配置。 每個元件會顯示負載、效能、失敗和警示等
+
+![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/005-black.png)
     KPI。
 
 3.  按一下 [應用程式分析] 圖示 。 這樣會開啟 **Application Insights
     Analytics**，它提供一種豐富查詢語言，可用於分析 Application Insights
     收集的所有資料。 此案例中會為您產生查詢，可將要求計數以圖表呈現。 您可以撰寫自己的查詢來分析其他資料。
 
+![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/007-black.png)
+
 4.  返回 [概觀] 頁面，檢查
     [健康情況概觀時間軸]。 此儀表板會提供應用程式健康情況的統計資料，包括連入要求數量、這些要求的持續時間，以及任何發生的失敗。
 
+![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/008-black.png)
+
 >   若要在 [網頁檢視載入時間]
 >   圖表中填入**用戶端遙測**資料，請將此指令碼新增至您要追蹤的每個頁面：
+
+```javascript
 
 >   HTML複製
 
@@ -133,7 +147,11 @@ Application Insights
 
 >   \</script\>
 
-1.  按一下 [調查] 標題下的
+```
+
+5.  按一下 [調查] 標題下的
     [瀏覽器]。 您在這裡可以找到應用程式頁面效能的相關計量。 您可以按一下
     [新增新的圖表] 來建立額外的自訂檢視，或選取 [編輯]
     來修改現有圖表的類型、高度、調色盤、群組和計量。
+    
+![](https://docs.microsoft.com/zh-tw/azure/application-insights/media/app-insights-nodejs-quick-start/009-black.png)
