@@ -27,7 +27,6 @@ Insight*遥测数据存储。一旦你有了这些数据, 你可以用 Kusto 的
 或者您已经完成了[其他教程](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-nodejs-tutorial-build-bot-framework-sample):
 
 ```javascript
-JavaScriptCopy
 
 /\*-----------------------------------------------------------------------------
 
@@ -251,7 +250,6 @@ NPM 包**app.js**文件。然后,
 >   复制
 
 ``` javascript
-Copy
 
 luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
@@ -305,7 +303,6 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 ```javascript
 
->   JavaScriptCopy
 
 >   // APPINSIGHT: Set up ApplicationInsights with Web App Bot settings
 >   "BotDevAppInsightsKey"
@@ -338,7 +335,6 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 ```javascript
 
->   JavaScriptCopy
 
 >   // APPINSIGHT: Log LUIS results to Application Insights
 
@@ -396,7 +392,6 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 ```javascript
 
->   JavaScriptCopy
 
 >   // APPINSIGHT: Log results to Application Insights
 
