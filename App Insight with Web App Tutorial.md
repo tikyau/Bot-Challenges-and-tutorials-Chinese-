@@ -1,4 +1,5 @@
 开始监视 Node.js Web 应用程序
+============================
 
 使用 Azure Application Insights，可轻松监视 Web
 应用程序的可用性、性能和使用情况。 还可以快速确定并诊断应用程序中的错误，而无需等待用户报告这些错误。 使用
@@ -44,24 +45,24 @@ Application Insights 可以从任何连接 Internet
 | **资源组**       | myResourceGroup  | 用于托管 App Insights 数据的新资源组的名称 |
 | **位置**         | 美国东部         | 选择离你近的位置或离托管应用的位置近的位置 |
 
-1.  单击“创建”。
+2.  单击“创建”。
 
 配置 App Insights SDK
 
-1.  选择“概述” \> “概要”\> 复制应用程序的**检测密钥**。
+3.  选择“概述” \> “概要”\> 复制应用程序的**检测密钥**。
 
 ![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/001-u.png)
 
 >   “新建 App Insights 资源”窗体
 
-1.  将用于 Node.js 的 Application Insights SDK
+4.  将用于 Node.js 的 Application Insights SDK
     添加到应用程序。 从应用的根文件夹运行：
 
 >   bash复制
 
 >   npm install applicationinsights --save
 
-1.  编辑应用的第一个 .js
+5.  编辑应用的第一个 .js
     文件并将以下两行添加到脚本的最顶部部分。 如果使用的是 [Node.js
     快速入门应用](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)，则将修改
     index.js 文件。 将 \<instrumentation_key\> 替换为应用程序的检测密钥。
@@ -72,7 +73,7 @@ Application Insights 可以从任何连接 Internet
 
 >   appInsights.setup('\<instrumentation_key\>').start();
 
-1.  重启应用。
+6.  重启应用。
 
 **备注**
 
@@ -80,6 +81,7 @@ Application Insights 可以从任何连接 Internet
 分钟，然后数据才开始显示在门户中。 如果此应用是一个低流量测试应用，请记住，仅当存在活动请求或正在执行的操作时，才会捕获大多数指标。
 
 开始在 Azure 门户中监视
+======================
 
 1.  现在可以在 Azure 门户中重新打开 Application
     Insights“概述”页（已在其中检索到检测密钥），查看有关当前正在运行的应用程序的详细信息。
@@ -88,14 +90,14 @@ Application Insights 可以从任何连接 Internet
 
 >   Application Insights 概述菜单
 
-1.  单击“应用映射”以获取应用程序组件之间依赖关系的可视布局。 每个组件均显示
+2.  单击“应用映射”以获取应用程序组件之间依赖关系的可视布局。 每个组件均显示
     KPI，如负载、性能、失败和警报。
 
 ![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/004-black.png)
 
 >   应用程序地图
 
-1.  单击“应用分析”图标 
+3.  单击“应用分析”图标 
 
     ![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/005-black.png)
 
@@ -109,7 +111,7 @@ Application Insights 可以从任何连接 Internet
 
 >   一段时间内用户请求的分析图
 
-1.  返回到“概述”页，并检查“运行状况概述时间线”。 此仪表板提供有关应用程序运行状况的统计信息，包括传入请求数、这些请求的持续时间，以及发生的任何故障。
+4.  返回到“概述”页，并检查“运行状况概述时间线”。 此仪表板提供有关应用程序运行状况的统计信息，包括传入请求数、这些请求的持续时间，以及发生的任何故障。
 
 ![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/008-black.png)
 
@@ -157,7 +159,7 @@ Application Insights 可以从任何连接 Internet
 
 ```
 
-1.  从“调查”标题下单击“浏览器”。 在此处可找到与应用页性能相关的指标。 可以单击“添加新图表”创建其他自定义视图，或者选择“编辑”修改现有的图表类型、高度、调色板、分组和指标。
+5.  从“调查”标题下单击“浏览器”。 在此处可找到与应用页性能相关的指标。 可以单击“添加新图表”创建其他自定义视图，或者选择“编辑”修改现有的图表类型、高度、调色板、分组和指标。
 
 ![](https://docs.microsoft.com/zh-cn/azure/application-insights/media/app-insights-nodejs-quick-start/009-black.png)
 

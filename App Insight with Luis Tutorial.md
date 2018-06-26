@@ -1,4 +1,5 @@
 将LUIS结果添加到Application Insight中从一个 web app bot
+======================================================
 
 本教程将LUIS请求和响应信息添加到*Application
 Insight*遥测数据存储。一旦你有了这些数据, 你可以用 Kusto 的语言来查询它,
@@ -214,6 +215,7 @@ matches: 'HomeAutomation.TurnOff'
 ```
 
 将Application Insight添加到 web app bot 中
+==========================================
 
 目前, Application Insight, 使用在这个 web app bot, 收集通用的状态遥测为
 bot。它不收集*LUIS*请求和响应信息, 您需要检查和修复您的意图和实体。
@@ -228,14 +230,14 @@ NPM 包**app.js**文件。然后,
 
 >   搜索应用程序洞察力
 
-1.  使用应用程序服务编辑器打开一个新的浏览器选项卡。在顶部栏中选择应用程序名称,
+2.  使用应用程序服务编辑器打开一个新的浏览器选项卡。在顶部栏中选择应用程序名称,
     然后选择**打开羚控制台**.
 
 ![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/kudu-console.png)
 
 >   搜索应用程序洞察力
 
-1.  在控制台中, 输入以下命令以安装Application Insight和下划线包:
+3.  在控制台中, 输入以下命令以安装Application Insight和下划线包:
 
 >   复制
 
@@ -298,7 +300,7 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 ```
 
 
-1.  创建Application Insight对象并使用 web app bot
+3.  创建Application Insight对象并使用 web app bot
     应用程序设置**BotDevInsightsKey**:
 
 ```javascript
@@ -331,7 +333,7 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 ```
 
-1.  添加 "**appInsightsLog**功能：
+4.  添加 "**appInsightsLog**功能：
 
 ```javascript
 
@@ -388,7 +390,7 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 >   Insight中的位置。该事件的名称是**LUIS-Results**, 一个唯一的名称,
 >   除了任何其他遥测数据收集此 web app bot。
 
-1.  使用该**appInsightsLog**功能。将其添加到每个意向对话框中:
+5.  使用该**appInsightsLog**功能。将其添加到每个意向对话框中:
 
 ```javascript
 
@@ -399,10 +401,11 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 ```
 
-1.  要测试您的 web app bot, 请使用**在网络聊天中测试**特征。你应该看到没有区别,
+6.  要测试您的 web app bot, 请使用**在网络聊天中测试**特征。你应该看到没有区别,
     因为所有的工作是在应用程序的洞察力, 而不是在 bot 的反应。
 
 在Application Insight查看LUIS条目
+================================
 
 打开Application Insight查看LUIS条目。
 
@@ -413,7 +416,7 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 >   搜索应用程序洞察力
 
-1.  当资源打开时,
+2.  当资源打开时,
     单击**搜索**放大玻璃的图标在极右面板。右侧显示一个新面板。根据发现的遥测数据的多少,
     面板可能需要第二次显示。搜索LUIS结果然后点击键盘上的 enter
     键。该列表被缩小到仅在本教程中添加的LUIS查询结果。
@@ -422,7 +425,7 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 >   筛选到依赖项
 
-1.  选择顶部条目。新窗口将显示更详细的数据,
+3.  选择顶部条目。新窗口将显示更详细的数据,
     包括极右查询的自定义数据。数据包括最高的意图, 和它的分数。
 
 ![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/app-insights-detail.png)
@@ -447,7 +450,7 @@ Insight为您提供了查询数据的能力。[Kusto](https://docs.microsoft.com
 
 >   分析按钮
 
-1.  一个新窗口将打开, 上面有一个查询窗口,
+2.  一个新窗口将打开, 上面有一个查询窗口,
     下面是一个数据表窗口。如果以前使用过数据库,
     这种安排是很熟悉的。查询包括从最近24小时开始的所有项目的名称LUIS-Results.的**CustomDimensions**列将LUIS查询结果用作名称/值对。
 
@@ -455,7 +458,7 @@ Insight为您提供了查询数据的能力。[Kusto](https://docs.microsoft.com
 
 >   分析查询窗口
 
-1.  要拉出最高意图、分数和话语, 请在查询窗口的最后一行中添加以下内容:
+3.  要拉出最高意图、分数和话语, 请在查询窗口的最后一行中添加以下内容:
 
 ```sql
 
@@ -469,7 +472,7 @@ Insight为您提供了查询数据的能力。[Kusto](https://docs.microsoft.com
 
 ```
 
-1.  运行查询。滚动到数据表中的最右边。的新列topIntent, 得分和话语都有。单击
+4.  运行查询。滚动到数据表中的最右边。的新列topIntent, 得分和话语都有。单击
     "topIntent要排序的列。
 
 ![](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/media/luis-tutorial-appinsights/app-insights-top-intent.png)
