@@ -108,19 +108,8 @@ Insight*遥测数据存储。一旦你有了这些数据, 你可以用 Kusto 的
 
 -   查询应用程序对最高意图、分数和话语的洞察力
 
-先决条件
-
--   你的LUIS Web App bot
-    从[上一个教程](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-nodejs-tutorial-build-bot-framework-sample)随着Application
-    Insight的打开。
-
 本挑戰中的所有代码都可在*LUIS-samples github存储
-库*与本教程相关的每一行都被注释为APPINSIGHT:.
-
-与LUIS的Web App bot
-
-本挑戰假定您具有如下所示的代码,
-或者您已经完成了[其他教程](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-nodejs-tutorial-build-bot-framework-sample):
+库*与本教程相关的每一行都被注释为APPINSIGHT:
 
 将Application Insight添加到 web app bot 中
 ==========================================
@@ -154,8 +143,6 @@ NPM 包**app.js**文件。然后,
 
 >   等待要安装的软件包:
 
->   复制
-
 ``` javascript
 
 luisbot\@1.0.0 D:\\home\\site\\wwwroot
@@ -182,7 +169,6 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 ```
 
-
 捕获并发送LUIS查询结果Application Insight
 
 1.  在 "应用程序服务编辑器浏览器" 选项卡中, 打开**app.js**文件。
@@ -201,7 +187,6 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 >   let appInsights = require("applicationinsights");
 
 ```
-
 
 3.  创建Application Insight对象并使用 web app bot
     应用程序设置**BotDevInsightsKey**:
@@ -310,4 +295,3 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 1.  要拉出最高意图、分数和话语
 
-2.  运行查询。滚动到数据表中的最右边的新列topIntent, 得分和话语。
