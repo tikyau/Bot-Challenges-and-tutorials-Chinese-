@@ -2,7 +2,7 @@
 =========================
 
 本文我们介绍如何使用必应的语音识别 API(Bing Speech API) 把语音转换成文本：  
-![][http://img1.af18.net/mmbiz_png/7duef2MZYIXiakN1uySlKsH9OSNhElBY5PSzdB4uYvDfknqtsztaS8uhCmcLCg4H0lsiboMibNgeaApp70DdHCWXw/640?wx_fmt=png] 
+![](http://img1.af18.net/mmbiz_png/7duef2MZYIXiakN1uySlKsH9OSNhElBY5PSzdB4uYvDfknqtsztaS8uhCmcLCg4H0lsiboMibNgeaApp70DdHCWXw/640?wx_fmt=png)
 
 使用 Bing Speech API 可以轻松地开发出下面的应用：  
 ![][http://img1.af18.net/mmbiz_png/7duef2MZYIXiakN1uySlKsH9OSNhElBY5z8xoXibStGUf9SnINK75XricxZGYYial7k3uCogLwuVADEdJ9bnyIqWeg/640?wx_fmt=png]  
@@ -16,7 +16,6 @@
 说明：对于学习和练习来说，你可以创建免费的 Azure 账号并创建免费版的上述实例，详细信息请参考 Azure 官网。创建 WPF 程序  
 Bing Speech API 服务同时提供了 REST API 和客户端类库，因为 REST API 提供的服务会有一些限制，所以我们在演示程序中使用客户端类库。客户端类库分为 x86 和 x64 两个版本，笔者引用的是 x64 的版本 Microsoft.ProjectOxford.SpeechRecognition-x64：  
 ![][http://img1.af18.net/mmbiz_png/7duef2MZYIXiakN1uySlKsH9OSNhElBY5171rMBc0kgVP0VyXiaLy3QrPf1uOpCzuX196Rwc9RHQdv4EKic3ZMiapQ/640?wx_fmt=png]  
-
 因而需要把工程的 platform target 也设置为 x64。  
 需要注意的是，Azure 提供的认知服务 API 都是需要认证信息的。具体的方式就是把我们创建的服务的 key 随 API 发送的服务器端进行认证。你可以在创建的服务实例的详情界面获得对应的 key，我们在程序中通过定义的常量来保存它们：  
 const string SUBSCRIPTIONKEY = "your bing speech API key";  
