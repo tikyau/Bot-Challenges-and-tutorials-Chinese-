@@ -1,25 +1,20 @@
-挑戰四
-======
+# 挑戰 - 监视 Node.js Web 应用程序
 
-监视 Node.js Web 应用程序
-========================
-
+## 背景介绍
 Azure Application Insights，可轻松监视 Web
 应用程序的可用性、性能和使用情况。 还可以快速确定并诊断应用程序中的错误，而无需等待用户报告这些错误。 
 
-先决条件
+### 挑战需要的开发环境:
 
 完成本挑戰：
 
--   需要 Azure 订阅和现有 Node.js Web 应用程序。
+*   需要 Azure 订阅和现有 Node.js Web 应用程序。
 
 如果没有 Node.js Web 应用程序，则可以按照[创建 Node.js Web
 应用快速入门](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)创建一个。
 
 如果你还没有 Azure
 订阅，可以在开始前创建一个[免费](https://azure.microsoft.com/free/)帐户。
-
-登录到 Azure 门户
 
 登录到 [Azure 门户](https://portal.azure.com/)。
 
@@ -93,14 +88,14 @@ Application Insights 可以从任何连接 Internet
 
 >   \</script\>
 
-将LUIS结果添加到Application Insight
-==================================
+# 将LUIS结果添加到Application Insight
+
 
 本挑戰将LUIS请求和响应信息添加到*Application
 Insight*遥测数据存储。一旦你有了这些数据, 你可以用 Kusto 的语言来查询它,
 或者PowerBi实时地分析、汇总和报告意图以及话语的实体。此分析可帮助您确定是否应添加或编辑LUIS应用程序的意图和实体。
 
-您将学习如何:
+## 成功标准:
 
 -   将应Application Insight添加到 web app bot 中
 
@@ -111,8 +106,8 @@ Insight*遥测数据存储。一旦你有了这些数据, 你可以用 Kusto 的
 本挑戰中的所有代码都可在*LUIS-samples github存储
 库*与本教程相关的每一行都被注释为APPINSIGHT:
 
-将Application Insight添加到 web app bot 中
-==========================================
+# 将Application Insight添加到 web app bot 中
+
 
 目前, Application Insight, 使用在这个 web app bot, 收集通用的状态遥测为
 bot。它不收集*LUIS*请求和响应信息, 您需要检查和修复您的意图和实体。
@@ -169,7 +164,7 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 
 ```
 
-捕获并发送LUIS查询结果Application Insight
+* 捕获并发送LUIS查询结果Application Insight
 
 1.  在 "应用程序服务编辑器浏览器" 选项卡中, 打开**app.js**文件。
 
@@ -288,8 +283,8 @@ luisbot\@1.0.0 D:\\home\\site\\wwwroot
 >   appInsightsLog(session,args);
 
 ```
-在Application Insight查看LUIS条目
-=================================
+# 在Application Insight查看LUIS条目
+
 
 >   分析查询窗口
 
